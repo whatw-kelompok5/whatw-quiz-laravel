@@ -107,7 +107,7 @@ class QuizController extends Controller
 
 
 		//delete quiz
-		$quiz->delete();
+		$quiz->delete(); 
 
 		//return response
 		return new QuizResource(true, 'Data Quiz Berhasil Dihapus!', null);
