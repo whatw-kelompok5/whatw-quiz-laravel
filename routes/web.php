@@ -17,3 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('/quiz', App\Http\Controllers\QuizController::class);
+Route::resource('/avatar', App\Http\Controllers\AvatarController::class);

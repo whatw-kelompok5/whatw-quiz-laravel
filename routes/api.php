@@ -19,3 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('/quiz', App\Http\Controllers\Api\QuizController::class);
+Route::apiResource('/avatar', App\Http\Controllers\Api\AvatarController::class);
