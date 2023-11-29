@@ -20,8 +20,23 @@ class QuizController extends Controller
 	public function index()
 	{
 		$quiz = Quiz::all();
-
-		return new QuizResource(true, 'List Data Quiz', $quiz);
+		$new_quiz = array();
+    foreach ($quiz as $q) {
+        $new_quiz[] = array(
+            'id' => $q->id,
+            'difficulty' => $q->difficulty,
+            'question' => $q->question,
+            'answer' => array(
+                'correct_answer' => $q->correct_answer,
+                'incorrect_answer1' => $q->incorrect_answer1,
+                'incorrect_answer2' => $q->incorrect_answer2,
+                'incorrect_answer3' => $q->incorrect_answer3
+            ),
+            'created_at' => $q->created_at,
+            'updated_at' => $q->updated_at
+        );
+    }
+		return new QuizResource(true, 'List Data Quiz', $new_quiz);
 	}
 
 	public function store(Request $request)
