@@ -26,12 +26,13 @@ class QuizController extends Controller
             'id' => $q->id,
             'difficulty' => $q->difficulty,
             'question' => $q->question,
-            'answer' => array(
-                'correct_answer' => $q->correct_answer,
-                'incorrect_answer1' => $q->incorrect_answer1,
-                'incorrect_answer2' => $q->incorrect_answer2,
-                'incorrect_answer3' => $q->incorrect_answer3
+            'options' => array(
+                $q->correct_answer,
+                $q->incorrect_answer1,
+                $q->incorrect_answer2,
+                $q->incorrect_answer3
             ),
+						'answer' => $q->correct_answer,
             'created_at' => $q->created_at,
             'updated_at' => $q->updated_at
         );
